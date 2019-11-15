@@ -241,21 +241,91 @@ console.log( trackCar(123));
 console.log( trackCar(123, 'Chicago'));
 
 
+//Constructor Functions
+
+function Car(id) {
+    this.carId = id;
+    this.start = function() {
+        console.log('start: ' + this.carId);
+    };
+}
+
+let vehicle = new Car(123);
+vehicle.start();
+
+// Prototypes
+
+function Cars(id) {
+    this.carId = id;
+}
+
+Cars.prototype.start = function() {
+    console.log('start: ' + this.carId);
+};
+
+let car4 = new Cars(127);
+car4.start();
+
+//Expanding Objects Using Prototypes
+
+String.prototype.hello = function() {
+    return this.toString() + ' Hello';
+};
+
+console.log('foo' .hello());
 
 
+// JSON - Stringify/Parse
+
+let house = {
+    id: 936,
+    style: 'mansion'
+};
+
+console.log(JSON.stringify(house));
+
+let jsonIn = `{"id":936,"style":"mansion"}`;
+
+let house2 = JSON.parse(jsonIn);
+console.log(house2);
 
 
+// Array Iteration
 
+let houseIds = [
+    {houseId: 123, style: 'mansion'},
+    {houseId: 123, style: 'apartment'},
+];
 
+houseIds.forEach( house => console.log(house));
 
+houseIds.forEach( (house, index) => console.log(house, index));
 
+// Array Filtering
 
+let houseIds2 = [
+    {houseId: 123, style: 'mansion'},
+    {houseId: 124, style: 'apartment'},
+    {houseId: 125, style: 'apartment'},
+];
 
+let apartments = houseIds2.filter(
+    house => house.style === 'apartment'
+);
 
+console.log(apartments);
 
+let result = houseIds2.every(
+    house => house.houseId > 0
+);
 
+console.log(result);
 
+let mansion = houseIds2.find(
+    mansion => mansion.style === 'mansion'
+);
 
+console.log(mansion.houseId);
 
 
 

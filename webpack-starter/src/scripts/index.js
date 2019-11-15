@@ -328,9 +328,58 @@ let mansion = houseIds2.find(
 console.log(mansion.houseId);
 
 
+// Classes and Properties
+
+class House {
+    constructor(id) {
+        this.id = id;
+    }
+}
+
+let house8 = new House(5);
+house8.id = 9;
+console.log(house8.id);
+
+// Methods
+
+class Dog {
+    constructor(name) {
+        this.name = name;
+    }
+    identify(suffix) {
+        return `My name is: ${this.name}${suffix}`;
+    }
+}
+
+let dog = new Dog('Pepe');
+console.log(dog.identify('!!!'));
+console.log(dog.name);
 
 
+// Inheritance
 
+class Animal {
+    constructor(name) {
+        this.name = name;
+    }
+    makeNoise(noise) {
+        return `Noise: ${noise}`;
+    }
+}
+
+class Cat extends Animal {
+    constructor(name) {
+        super(name);
+    }
+    makeNoise(noise) {
+        return super.makeNoise(noise);
+    }
+}
+
+let animal = new Cat('Manolo');
+
+console.log(animal.name);
+console.log(animal.makeNoise('purr'));
 
 
 

@@ -9,9 +9,9 @@ sendCars('Monday', 1, 2, 3, 4, 5);
 //Destructuring Arrays
 let carIds = [100, 200, 300];
 let car1, car2;
-[car1, car2, ...theRest] = carIds;
+// [car1, car2, ...theRest] = carIds;
 
-console.log(car1, car2, theRest);
+// console.log(car1, car2, theRest);
 
 
 //Destructuring Objects
@@ -35,8 +35,8 @@ let carIds2 = [1, 2, 3, 4, 5];
 startCars(...carIds2);
 
 //Common Type Conversions
-x = "55";
-y = "6.27";
+let x = "55";
+let y = "6.27";
 
 console.log( Number.parseInt(x));
 console.log( Number.parseFloat(y));
@@ -358,14 +358,9 @@ console.log(dog.name);
 
 // Inheritance
 
-class Animal {
-    constructor(name) {
-        this.name = name;
-    }
-    makeNoise(noise) {
-        return `Noise: ${noise}`;
-    }
-}
+// class Animal has its own module - animal.js - Importing a Module
+
+import { Animal } from './models/animal.js';
 
 class Cat extends Animal {
     constructor(name) {
@@ -376,10 +371,12 @@ class Cat extends Animal {
     }
 }
 
-let animal = new Cat('Manolo');
+let animalito = new Cat('Manolo');
 
-console.log(animal.name);
-console.log(animal.makeNoise('purr'));
+console.log(animalito.name);
+console.log(animalito.makeNoise('purr'));
+
+
 
 
 

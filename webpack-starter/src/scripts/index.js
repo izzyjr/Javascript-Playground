@@ -377,6 +377,78 @@ console.log(animalito.name);
 console.log(animalito.makeNoise('purr'));
 
 
+// Programming the BOM and DOM
+
+window.year = 1956;
+console.log(window.year);
+
+
+// Timers
+
+let intervalId = setInterval( function() {
+    console.log('1 second passed');
+}, 1000);
+
+clearInterval(intervalId);
+
+let setTimeoutId = setTimeout(function() {
+    console.log("5 seconds have gone by");
+}, 5000);
+
+clearTimeout(setTimeoutId);
+
+
+// The Location object
+
+console.log(location.href);
+console.log(document.location.href);
+
+
+// Selecting DOM Elements
+
+let el = document.getElementById('first');
+console.log(el);
+
+
+let elz = document.getElementsByClassName('p1');
+console.log(elz[0]);
+console.log(elz[1]);
+
+let tagNames = document.getElementsByTagName('p');
+console.log(tagNames[0]);
+console.log(tagNames[1]);
+console.log(tagNames[2]);
+console.log(tagNames);
+
+
+// Modifying DOM Elements
+
+let element = document.getElementById('first');
+element.textContent = 'New content';
+element.setAttribute('foo', 'fooValue');
+element.classList.add('p2');
+element.style.color = 'blue';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

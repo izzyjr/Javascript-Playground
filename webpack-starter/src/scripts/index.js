@@ -430,9 +430,54 @@ element.classList.add('p2');
 element.style.color = 'blue';
 
 
+// Errors in JavaScript - Try Catch
+
+try {
+    let car = newCar;
+}
+catch(error) {
+    console.log('error: ', error);
+}
+console.log('continuing...');
 
 
+try {
+    let car5 = newCar5;
+}
+catch(error) {
+    console.log('error: ', error);
+}
+finally {
+    console.log('this always executes');
+}
 
+
+// Developer defined errors
+
+try {
+    // code here...
+    throw new Error('my custom error');
+}
+catch(error) {
+    console.log('error: ', error);
+}
+finally {
+    console.log('this always executes - 2');
+}
+
+
+// Creating promises
+
+let promise = new Promise(
+    function(resolve, reject) {
+        setTimeout(resolve, 100, 'someValue');
+    }
+);
+
+promise.then(
+    value => console.log('fulfilled: ' + value),
+    error =>  console.log('rejected: ' + error)
+);
 
 
 

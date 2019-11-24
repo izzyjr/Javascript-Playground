@@ -480,6 +480,34 @@ promise.then(
 );
 
 
+// HTTP Requests Using jQuery
+
+import $ from 'jquery';
+
+let promise2 = $.get("https://jsonplaceholder.typicode.com/todos/1");
+
+promise2.then(
+    data => console.log('Success: ', data),
+    error => console.log('Error: ', error)
+);
+
+
+//HTTP POST Using jQuery
+
+let user = {
+    title: 'foo',
+    body: 'bar',
+    userId: 1
+};
+
+let promise3 = $.post(
+  "https://jsonplaceholder.typicode.com/posts", user
+);
+
+promise3.then(
+    data => console.log('Success: ', data),
+    error => console.log('Error: ', error)
+);
 
 
 
